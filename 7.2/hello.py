@@ -23,3 +23,15 @@ import math
 # a = float(input("请输入边长"))
 # b = float(input("请输入边长"))
 # print(str((a**2+b**2)**0.5))
+
+# # 小偷问题
+# x = 1
+# for x in range(1, 4):
+#     if ((x != 1) + (x == 3) + (x == 4) + (x != 4) == 3):
+#         print(chr(64 + x))
+
+# 机智的输入
+a = input()
+b = input()
+c = input()
+print(eval(a + c + b))
