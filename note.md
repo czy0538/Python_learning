@@ -70,6 +70,8 @@
 
   - from 模块名 import 函数名、变量名
 
+  - import 模块名*  //全部引入
+  
     ```py
     from math import sin,sqrt
     sqrt(2)
