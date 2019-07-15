@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+
+
 class Stu:
     __all_info = []
 
@@ -14,6 +17,7 @@ class Stu:
         print('|  6) 按年龄打印学生信息            |')
         print('|  7) 保存信息到文件(cj.txt)        |')
         print('|  8)从文件中读取数据cj.txt)        |')
+        print('|  9) 成绩分析                      |')
         print('|  q) 退出                        |')
         print('+--------------------------------+')
 
@@ -33,13 +37,14 @@ class Stu:
                 self.score_Sort()
             elif num == '6':
                 self.age_Sort()
-            elif num =='7':
+            elif num == '7':
                 self.save_file()
-            elif num=='8':
+            elif num == '8':
                 self.read_file()
+            elif num == '9':
+                self.analysis()
             elif num == 'q':
                 break
-
 
     def add_stu_info(self):
         while True:
@@ -132,6 +137,24 @@ class Stu:
                 break
             print(s)
         f.close()
+
+    def analysis(self):
+        name_list = ['A', 'B', 'C', 'D', 'E']
+        num_list = [0, 0, 0, 0, 0]
+        for t in self.__all_info:
+            if t['score'] >= 90:
+                num_list[0] += 1
+            elif 80 <= t['score'] < 90:
+                num_list[1] += 1
+            elif 70 <= t['score'] < 80:
+                num_list[2] += 1
+            elif 60 <= t['score'] < 70:
+                num_list[3] += 1
+            elif t['score'] < 60:
+                num_list[4] += 1
+
+        plt.bar(range(len(num_list)), num_list, color='rgb', tick_label=name_list)
+        plt.show()
 
 
 def main():
