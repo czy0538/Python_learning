@@ -21,7 +21,7 @@ def tcplink(sock, addr):
             sock.send(senddata.encode())
         except:
             socket_set.remove(sock)
-            print('[%s:%s] is down!' % addr)
+            print('[%s:%s] 欢迎再来玩呀!' % addr)
             break
         if data == 'exit' or not data:
             socket_set.remove(sock)

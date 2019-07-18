@@ -1,3 +1,3 @@
-print("hello github")
-test=10
-print(test)
+a={}
+a["test"]="hehe"
+print(a)
